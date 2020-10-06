@@ -1,11 +1,19 @@
-var a = new XMLHttpRequest();
+// var a = new XMLHttpRequest();
 
-a.addEventListener('readystatechange', function(r) {
-  if(r.target.status === 200) {
-    console.log(r.target.response);
-  }
+// a.addEventListener('readystatechange', function(r) {
+//   if(r.target.status === 200) {
+//     console.log(r.target.response);
+//   }
+// })
+
+// a.open('GET', 'https://api.github.com/users/BenShigeruClark', true);
+
+// a.send();
+
+fetch('https://api.github.com/users/BenShigeruClark')
+.then(function(r) {
+  r.json();
 })
-
-a.open('GET', 'https://api.github.com/users/BenShigeruClark', true);
-
-a.send();
+.then(function(j) {
+  console.log(j)
+})
