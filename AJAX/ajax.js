@@ -12,7 +12,8 @@
 
 fetch('https://api.github.com/users/BenShigeruClark')
 .then(function(r) {
-  r.json();
+  console.log(r.status);
+  return r.json();
 })
 .then(function(j) {
   console.log(j)
