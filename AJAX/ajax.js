@@ -16,5 +16,6 @@ fetch('https://api.github.com/users/BenShigeruClark')
   return r.json();
 })
 .then(function(j) {
-  console.log(j)
+  console.log(j);
+  document.getElementById('username').innerText = j.login;
 })
